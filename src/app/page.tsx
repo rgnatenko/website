@@ -1,113 +1,120 @@
+"use client";
+import FAQ from "@/components/HomePage/FAQ";
+import OrderForm from "@/components/MakeOrderForm";
+import PriceSection from "@/components/HomePage/PriceSection";
+import Reviews from "@/components/HomePage/Reviews";
+import WhyUs from "@/components/HomePage/WhyUs";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import PremisesType from "@/components/HomePage/PremisesType";
+import ScopeOfWork from "@/components/HomePage/ScopeOfWork";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="relative px-6 sm:px-12 md:px-16 sm:py-8 bg-white grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-x-clip">
+      <div className="relative sm:w-fit h-fit mt-56 mb-7 sm:mt-[400px] md:mt-0 col-span-4 sm:col-span-6">
+        <div className="relative z-10 p-3 sm:p-6 md:p-3 w-fit ml-5 sm:ml-0 sm:w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
+          У вашій оселі
+        </div>
+        <div className="relative z-10 p-3 sm:p-6 md:p-3 sm:ml-3 w-fit ml-12  bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
+          все буде
+        </div>
+        <div className="absolute z-20 right-12 bottom-1 -rotate-6 sm:-right-24 md:-right-16 xl:-right-24 p-3 sm:p-6 md:p-3 w-fit bg-primary shadow-sm rounded-sm font-bold text-white uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
+          chisto
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col gap-4 text-lg text-gray-900 md:max-w-[454px] xl:max-w-full col-span-4 sm:col-start-1 sm:col-span-6">
+        Замовляй прибирання оселі або офісу чи коммерційного приміщення. Тримай
+        усе в чистоті та порядку.
+        <OrderForm />
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <Image
+        className="absolute right-16 sm:top-0 sm:right-20 md:-top-20 md:right-12 w-[320px] h-[360px] sm:w-[524px] sm:h-[589px] md:w-[467px] md:h-[547px] xl:w-[537px] xl:h-[617px]"
+        src="/first-screen-photo.png"
+        width={1037}
+        height={1117}
+        alt=""
+      />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <div className="col-span-4 sm:col-start-1 sm:col-span-3 md:col-start-1 md:col-span-6 mt-28 md:mt-52 xl:mt-72">
+        <div className="relative w-fit">
+          <div className="w-[365px] h-[100px] sm:w-[200px] sm:h-[60px] md:w-[250px] md:h-[80px] lg:w-[365px] lg:h-[104px] rounded-[60%] rotate-12 border border-[#EDEDED]" />
+          <div className="absolute -top-7 left-12 rotate-6">
+            <div
+              className="w-8 h-8 flex items-center justify-center bg-white
+             rounded-full shadow-md absolute -top-3 -left-3 z-10"
+            >
+              ✅
+            </div>
+            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-[#6AA8FF]">
+              Швидкість
+            </div>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <div className="absolute bottom-0 -right-3 rotate-6">
+            <div
+              className="w-8 h-8 flex items-center justify-center bg-white
+             rounded-full shadow-md absolute -top-3 -left-3 z-10"
+            >
+              ✅
+            </div>
+            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-primary">
+              Сервіс
+            </div>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="absolute left-16 -bottom-2 rotate-6">
+            <div
+              className="w-8 h-8 flex items-center justify-center bg-white
+             rounded-full shadow-md absolute -top-3 -left-3 z-10"
+            >
+              ✅
+            </div>
+            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-[#FFD766]">
+              Якість
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div className="col-start-1 col-span-4 sm:col-span-3 md:col-span-6 flex flex-col gap-5 mt-12 md:mt-52 xl:mt-72">
+        <Link
+          href="/generalne"
+          className="flex justify-between items-center w-full duration-150 rounded-md border p-3 hover:text-primary border-[#D9D9D9]"
+        >
+          Генеральне прибирання
+          <ChevronRight className="w-4 h-4" />
+        </Link>
+        <Link
+          href="/poverhneve"
+          className="flex justify-between items-center w-full duration-150 rounded-md border p-3 hover:text-primary border-[#D9D9D9]"
+        >
+          Поверхневе прибирання
+          <ChevronRight className="w-4 h-4" />
+        </Link>
+        <Link
+          href="/pislya-remontu"
+          className="flex justify-between items-center w-full duration-150 rounded-md border p-3 hover:text-primary border-[#D9D9D9]"
+        >
+          Прибирання після ремонту
+          <ChevronRight className="w-4 h-4" />
+        </Link>
+      </div>
+
+      <WhyUs />
+
+      <ScopeOfWork />
+
+      <PriceSection />
+
+      <PremisesType />
+
+      <Reviews />
+
+      <FAQ />
     </main>
   );
 }
