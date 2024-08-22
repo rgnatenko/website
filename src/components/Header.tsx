@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import {
   Menubar,
@@ -8,8 +8,11 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "./ui/menubar";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export default function Header() {
+  const [activePathName, setActivePathname] = useState("");
   return (
     <>
       <Menubar className="py-8 border-0 md:hidden">
@@ -21,6 +24,13 @@ export default function Header() {
           </MenubarTrigger>
           <MenubarContent className="fixed left-3 min-w-64">
             <div className="flex flex-col gap-4 text-[20px] text-gray-900">
+              <Link
+                href="/"
+                className="font-bold text-primary uppercase text-2xl"
+              >
+                chisto
+              </Link>
+
               {[
                 { name: "Послуги", link: "poslugy" },
                 { name: "Питання", link: "pytannya" },
@@ -46,6 +56,7 @@ export default function Header() {
         <Link
           href="/"
           className="font-bold text-primary uppercase text-2xl hover:scale-110 hover:rotate-12 duration-150"
+          onClick={() => setActivePathname("")}
         >
           chisto
         </Link>
@@ -56,9 +67,12 @@ export default function Header() {
           { name: "Робота", link: "robota" },
         ].map((perk) => (
           <Link
-            className="font-regular text-gray-900 text-lg hover:text-primary duration-150"
+            className={cn("font-regular text-gray-900 text-md hover:text-primary duration-150", {
+              "text-primary":activePathName === perk.link
+            })}
             href={perk.link}
             key={perk.link}
+            onClick={() => setActivePathname(perk.link)}
           >
             {perk.name}
           </Link>

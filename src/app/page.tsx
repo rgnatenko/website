@@ -1,18 +1,18 @@
 "use client";
-import FAQ from "@/components/HomePage/FAQ";
 import OrderForm from "@/components/MakeOrderForm";
 import PriceSection from "@/components/HomePage/PriceSection";
-import Reviews from "@/components/HomePage/Reviews";
+import Reviews from "@/components/Reviews";
 import WhyUs from "@/components/HomePage/WhyUs";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PremisesType from "@/components/HomePage/PremisesType";
 import ScopeOfWork from "@/components/HomePage/ScopeOfWork";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
-    <main className="relative px-6 sm:px-12 md:px-16 sm:py-8 bg-white grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-x-clip">
+    <>
       <div className="relative sm:w-fit h-fit mt-56 mb-7 sm:mt-[400px] md:mt-0 col-span-4 sm:col-span-6">
         <div className="relative z-10 p-3 sm:p-6 md:p-3 w-fit ml-5 sm:ml-0 sm:w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
           У вашій оселі
@@ -115,6 +115,6 @@ export default function Home() {
       <Reviews />
 
       <FAQ />
-    </main>
+    </>
   );
 }

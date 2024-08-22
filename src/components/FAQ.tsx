@@ -3,7 +3,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "../ui/accordion";
+} from "./ui/accordion";
 
 export default function FAQ() {
   return (

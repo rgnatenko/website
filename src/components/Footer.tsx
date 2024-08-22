@@ -1,48 +1,24 @@
+import { SERVICES } from "@/constants";
 import { Clock, Instagram, Phone } from "lucide-react";
+import { Montserrat_Alternates } from "next/font/google";
 import Link from "next/link";
+
 
 export function Footer() {
   return (
-    <footer className="relative px-6 py-8 sm:px-12 md:px-16 bg-white grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-hidden">
+    <footer
+      className={`relative px-6 py-8 sm:px-12 md:px-16 bg-white grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-hidden`}
+    >
       <div className="col-span-2 sm:col-span-3 flex flex-col gap-4 text-md font-semibold">
         Послуги
         <div className="flex flex-col gap-2 text-[12px] font-medium text-gray-900">
-          {[
-            {
-              name: "Генеральне прибирання",
-              link: "/generalne",
-            },
-            {
-              name: "Поверхневе прибирання",
-              link: "/poverhneve",
-            },
-            {
-              name: "Прибирання після ремонту",
-              link: "/pislya-remontu",
-            },
-            {
-              name: "Прибирання територій",
-              link: "/prybyrannya-terytoriy",
-            },
-            {
-              name: "Озеленення територій",
-              link: "/ozelenennya",
-            },
-            {
-              name: "Озонація, прибирання запаху",
-              link: "/ozonatsiya",
-            },
-            {
-              name: "Хімчистка",
-              link: "/khimchystka",
-            },
-          ].map((perk) => (
+          {SERVICES.map((service) => (
             <Link
               className="hover:text-primary duration-150"
-              href={perk.link}
-              key={perk.name}
+              href={service.link}
+              key={service.name}
             >
-              {perk.name}
+              {service.name}
             </Link>
           ))}
         </div>

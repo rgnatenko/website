@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const { name, phone, city, premisesType, cleaningType, additionalServices } = await req.json();
+        const { name, phone, city, premisesType, cleaningType, additionalServices, comment } = await req.json();
 
         const emailMessage = {
             from: process.env.NEXT_USER,
@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
         Тип приміщення: ${premisesType},
         Тип прибирання: ${cleaningType},
         Додаткові послуги: ${additionalServices ? additionalServices.join(', ') : 'Немає'},
+        Комментар до замовлення: ${comment}
       `,
         };
 

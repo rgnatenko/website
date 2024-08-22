@@ -9,21 +9,12 @@ import {
   MultiSelectorItem,
 } from "@/components/ui/multi-select";
 import { UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { ADDITIONAL_SERVICES } from "@/constants";
 
-const options = [
-  { label: "Прання речей", value: "prannya" },
-  { label: "Прасування речей", value: "prasuvannya" },
-  { label: "Миття витяжки всередині", value: "myttya_vytyazhky" },
-  { label: "Прибирання всередині шафок", value: "vseredyni_shafok" },
-  {
-    label: "Прибирання лотка домашнього улюбленця",
-    value: "prybyrannya_lotka",
-  },
-  {
-    label: "Хімчистка",
-    value: "khimchystka",
-  },
-];
+const options = ADDITIONAL_SERVICES.map((service) => ({
+  label: service,
+  value: service,
+}));
 
 interface Props {
   register: UseFormRegister<{
@@ -48,7 +39,7 @@ interface Props {
 export default function AdditionalServicesSelect({
   register,
   setValue: setAdditionalServicesValue,
-  clearServices
+  clearServices,
 }: Props) {
   const [value, setValue] = useState<string[]>([]);
 

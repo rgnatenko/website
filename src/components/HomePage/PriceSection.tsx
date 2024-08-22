@@ -1,3 +1,4 @@
+"use client";
 import { ChevronRight, Clock } from "lucide-react";
 import {
   Table,
@@ -8,8 +9,24 @@ import {
   TableCell,
 } from "../ui/table";
 import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { useState } from "react";
+import { TypeOfCleaning } from "@/types/TypeOfCleaning";
+import PriceTable from "@/app/tsiny/components/PriceTable";
+import Selector from "../ui/Selector";
+import { CLEANING_TYPES } from "@/constants";
 
 export default function PriceSection() {
+  const [typeOfCleaning, setTypeOfCleaning] =
+    useState<TypeOfCleaning>("poverhneve");
+
   return (
     <>
       <div className="col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 relative flex justify-center text-center text-[20px] sm:text-[30px] text-gray-900 mt-24 mb-5">
@@ -30,71 +47,16 @@ export default function PriceSection() {
         </div>
       </div>
 
-      <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex justify-center">
-        <div className="flex flex-col w-full">
-          <div className="flex justify-center items-center h-12 bg-gray-100 text-md text-slate-900 rounded-t-md">
-            Квартира
-          </div>
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-white pointer-events-none border border-gray-300 border-t-0">
-                <TableHead className="border-l text-center text-[14px] sm:text-sm w-80">
-                  <div className="block w-max m-auto">1-кімнатна</div>
-                </TableHead>
-                <TableHead className="border-l text-center text-[14px] sm:text-sm w-80">
-                  <div className="block w-max m-auto">2-кімнатна</div>
-                </TableHead>
-                <TableHead className="border-l text-center text-[14px] sm:text-sm w-80">
-                  <div className="block w-max m-auto">3-кімнатна</div>
-                </TableHead>
-                <TableHead className="border-l text-center text-[14px] sm:text-sm w-80">
-                  <div className="block w-max m-auto">4-кімнатна</div>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
+      <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex flex-col gap-8 justify-center">
+        <Selector
+          title="Тип прибирання:"
+          className="flex-col items-start gap-1"
+          items={CLEANING_TYPES}
+          defaultValue="poverhneve"
+          onValueChange={(e: string) => setTypeOfCleaning(e as TypeOfCleaning)}
+        />
 
-            <TableBody>
-              <TableRow>
-                <TableCell className="text-center border">
-                  <div className="w-max flex flex-col items-start gap-4 font-bold text-gray-900">
-                    Від 1000 ГРН
-                    <div className="text-[12px] text-gray-400 flex items-center gap-2 font-medium">
-                      <Clock className="text-gray-300 w-4 h-4" />
-                      ~6 годин
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell className="text-center border">
-                  <div className="w-max flex flex-col items-start gap-4 font-bold text-gray-900">
-                    Від 1500 ГРН
-                    <div className="text-[12px] text-gray-400 flex items-center gap-2 font-medium">
-                      <Clock className="text-gray-300 w-4 h-4" />
-                      ~8 годин
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell className="text-center border">
-                  <div className="w-max flex flex-col items-start gap-4 font-bold text-gray-900">
-                    Від 2200 ГРН
-                    <div className="text-[12px] text-gray-400 flex items-center gap-2 font-medium">
-                      <Clock className="text-gray-300 w-4 h-4" />
-                      ~8 годин
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell className="text-center border">
-                  <div className="w-max flex flex-col items-start gap-4 font-bold text-gray-900">
-                    Від 2800 ГРН
-                    <div className="text-[12px] text-gray-400 flex items-center gap-2 font-medium">
-                      <Clock className="text-gray-300 w-4 h-4" />
-                      ~8 годин
-                    </div>
-                  </div>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
+        <PriceTable typeOfCleaning={typeOfCleaning} />
       </div>
 
       <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex items-center justify-center text-center">

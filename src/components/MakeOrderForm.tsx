@@ -27,6 +27,8 @@ import axios from "axios";
 import { X } from "lucide-react";
 import { useToast } from "./ui/use-toast";
 import { useState } from "react";
+import { Textarea } from "./ui/textarea";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(1, "Імʼя обов'язкове"),
@@ -35,11 +37,16 @@ const formSchema = z.object({
   premisesType: z.string({ message: "Виберіть тип приміщення" }),
   cleaningType: z.string({ message: "Виберіть тип прибирання" }),
   additionalServices: z.array(z.string()).optional(),
+  comment: z.string().optional(),
 });
 
 type FormDataType = z.infer<typeof formSchema>;
 
-export default function OrderForm() {
+interface Props {
+  className?: string;
+}
+
+export default function OrderForm({ className }: Props) {
   const {
     register,
     handleSubmit,
@@ -69,6 +76,7 @@ export default function OrderForm() {
     setValue("premisesType", "");
     setValue("cleaningType", "");
     setClearServices(true);
+    setValue("comment", "");
   };
 
   const onSubmit = async (data: FormDataType) => {
@@ -105,7 +113,7 @@ export default function OrderForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="sm:w-fit">Замовити прибирання</Button>
+        <Button className={cn("sm:w-fit", className)}>Замовити прибирання</Button>
       </DialogTrigger>
       <DialogContent className="w-[350px] sm:max-w-[425px] h-96 overflow-auto">
         <DialogClose
@@ -152,7 +160,7 @@ export default function OrderForm() {
                 defaultValue="Дніпро"
                 value={watch("city")}
               >
-                <SelectTrigger>
+                <SelectTrigger className="focus-visible:border-0">
                   <SelectValue placeholder="Місто" />
                 </SelectTrigger>
                 <SelectContent>
@@ -175,7 +183,7 @@ export default function OrderForm() {
                 onValueChange={(e) => setValue("premisesType", e)}
                 value={watch("premisesType")}
               >
-                <SelectTrigger>
+                <SelectTrigger className="focus-visible:border-0">
                   <SelectValue placeholder="Тип приміщення" />
                 </SelectTrigger>
                 <SelectContent>
@@ -199,7 +207,7 @@ export default function OrderForm() {
                 onValueChange={(e) => setValue("cleaningType", e)}
                 value={watch("cleaningType")}
               >
-                <SelectTrigger>
+                <SelectTrigger className="focus-visible:border-0">
                   <SelectValue placeholder="Тип прибирання" />
                 </SelectTrigger>
                 <SelectContent>
@@ -225,6 +233,12 @@ export default function OrderForm() {
               register={register}
               setValue={setValue}
               clearServices={clearServices}
+            />
+
+            <Textarea
+              id="comment"
+              {...register("comment")}
+              placeholder="Комментар до замовлення"
             />
           </div>
 

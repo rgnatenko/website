@@ -24,7 +24,7 @@ export default function ScopeOfWork() {
       </div>
 
       <Select defaultValue="mebli" onValueChange={handleZoneOfCleaningChange}>
-        <SelectTrigger className="col-span-full sm:col-span-3">
+        <SelectTrigger className="col-span-full sm:col-span-3 focus-visible:border-0">
           <SelectValue placeholder="" />
         </SelectTrigger>
 
