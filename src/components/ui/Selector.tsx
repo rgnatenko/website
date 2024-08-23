@@ -32,13 +32,13 @@ export default function Selector({
       <Select defaultValue={defaultValue} onValueChange={onValueChange}>
         <SelectTrigger
           className={cn(
-            "w-48 focus-visible:border-0 text-left",
+            "relative w-48 focus-visible:border-0 text-left",
             triggerClassName
           )}
         >
           <SelectValue placeholder="" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="absolute top-[100%]">
           <SelectGroup>
             {items.map((item) => (
               <SelectItem key={item.value} value={item.value}>

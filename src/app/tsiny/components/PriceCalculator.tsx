@@ -43,11 +43,11 @@ export default function PriceCalculator() {
   return (
     <>
       <div className="col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-6 lg:col-start-2 2xl:col-start-3 2xl:col-span-5 p-6 lg:p-12 rounded-lg bg-white flex flex-col gap-8 text-gray-900">
-        <div className="w-full flex flex-col lg:flex-row gap-5 justify-between items-center">
+        <div className="w-full flex flex-col sm:flex-row md:flex-col lg:flex-row gap-5 justify-between items-center">
           <Selector
             title="Тип прибирання:"
-            className="lg:flex-col items-start gap-1 w-full"
-            triggerClassName="w-36"
+            className="sm:flex-col items-center lg:items-start justify-between w-full"
+            triggerClassName="w-full"
             items={CLEANING_TYPES}
             defaultValue="poverhneve"
             onValueChange={(e: string) =>
@@ -57,8 +57,8 @@ export default function PriceCalculator() {
 
           <Selector
             title="Кількість кімнат:"
-            className="lg:flex-col items-start gap-1 w-full"
-            triggerClassName="w-36"
+            className="sm:flex-col items-center lg:items-start justify-between w-full"
+            triggerClassName="w-full"
             items={[
               { name: 1, value: 1 },
               { name: 2, value: 2 },

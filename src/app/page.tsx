@@ -13,33 +13,68 @@ import FAQ from "@/components/FAQ";
 export default function Home() {
   return (
     <>
-      <div className="relative sm:w-fit h-fit mt-56 mb-7 sm:mt-[400px] md:mt-0 col-span-4 sm:col-span-6">
-        <div className="relative z-10 p-3 sm:p-6 md:p-3 w-fit ml-5 sm:ml-0 sm:w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
+      <div className="hidden lg:flex col-span-12 justify-between items-center gap-12">
+        <div className="flex flex-col gap-12">
+          <div className="flex flex-col items-start">
+            <div className="w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-[30px] xl:text-[45px] 2xl:text-[55px] p-5">
+              У вашій оселі
+            </div>
+            <div className="relative z-20 flex items-center">
+              <div className="p-3 sm:p-6 md:p-3 w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-[30px] xl:text-[45px] 2xl:text-[55px] xl:p-5">
+                все буде
+              </div>
+              <div className="-rotate-6 p-3 sm:p-6 md:p-3 w-fit bg-primary shadow-sm rounded-sm font-bold text-white uppercase text-[30px] xl:text-[45px] 2xl:text-[55px] xl:p-5">
+                chisto
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-start gap-4 text-lg text-gray-900 max-w-[90%] xl:text-xl 2xl:text-2xl">
+            Замовляй прибирання оселі або офісу чи коммерційного приміщення.
+            Тримай усе в чистоті та порядку.
+            <OrderForm />
+          </div>
+        </div>
+
+        <Image
+          className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px] lg:w-[400px] lg:h-[420px] xl:w-[580px] xl:h-[620px] 2xl:w-[680px] 2xl:h-[720px]"
+          src="/first-screen-photo.png"
+          width={622}
+          height={654}
+          alt=""
+        />
+      </div>
+
+      <div className="col-span-4 flex items-center justify-center sm:col-span-6 md:col-span-12 xl:col-start-8 xl:col-span-6 lg:hidden">
+        <Image
+          className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px]"
+          src="/first-screen-photo.png"
+          width={622}
+          height={654}
+          alt=""
+        />
+      </div>
+
+      <div className="lg:hidden col-span-4 sm:col-span-6 md:col-span-12 xl:col-start-1 xl:col-span-6 flex flex-col items-center">
+        <div className="p-3 sm:p-6 md:p-3 w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-[30px] sm:text-[45px] md:text-[50px] lg:text-[60px] xl:p-5">
           У вашій оселі
         </div>
-        <div className="relative z-10 p-3 sm:p-6 md:p-3 sm:ml-3 w-fit ml-12  bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
-          все буде
-        </div>
-        <div className="absolute z-20 right-12 bottom-1 -rotate-6 sm:-right-24 md:-right-16 xl:-right-24 p-3 sm:p-6 md:p-3 w-fit bg-primary shadow-sm rounded-sm font-bold text-white uppercase text-2xl sm:text-[40px] md:text-2xl xl:text-[50px] xl:p-5">
-          chisto
+        <div className="relative z-20 flex items-center">
+          <div className="p-3 sm:p-6 md:p-3 w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-[30px] sm:text-[45px] md:text-[50px] lg:text-[60px] xl:p-5">
+            все буде
+          </div>
+          <div className="-rotate-6 p-3 sm:p-6 md:p-3 w-fit bg-primary shadow-sm rounded-sm font-bold text-white uppercase text-[30px] sm:text-[45px] md:text-[50px] lg:text-[60px] xl:p-5">
+            chisto
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 text-lg text-gray-900 md:max-w-[454px] xl:max-w-full col-span-4 sm:col-start-1 sm:col-span-6">
+      <div className="lg:hidden flex flex-col items-center text-center gap-4 text-lg text-gray-900 col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 lg:px-40 xl:px-0 xl:col-start-1 xl:col-span-6">
         Замовляй прибирання оселі або офісу чи коммерційного приміщення. Тримай
         усе в чистоті та порядку.
         <OrderForm />
       </div>
 
-      <Image
-        className="absolute right-16 sm:top-0 sm:right-20 md:-top-20 md:right-12 w-[320px] h-[360px] sm:w-[524px] sm:h-[589px] md:w-[467px] md:h-[547px] xl:w-[537px] xl:h-[617px]"
-        src="/first-screen-photo.png"
-        width={1037}
-        height={1117}
-        alt=""
-      />
-
-      <div className="col-span-4 sm:col-start-1 sm:col-span-3 md:col-start-1 md:col-span-6 mt-28 md:mt-52 xl:mt-72">
+      <div className="col-span-4 sm:col-start-1 sm:col-span-3 md:col-start-1 md:col-span-6 mt-28">
         <div className="relative w-fit">
           <div className="w-[365px] h-[100px] sm:w-[200px] sm:h-[60px] md:w-[250px] md:h-[80px] lg:w-[365px] lg:h-[104px] rounded-[60%] rotate-12 border border-[#EDEDED]" />
           <div className="absolute -top-7 left-12 rotate-6">
@@ -80,7 +115,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="col-start-1 col-span-4 sm:col-span-3 md:col-span-6 flex flex-col gap-5 mt-12 md:mt-52 xl:mt-72">
+      <div className="col-start-1 col-span-4 sm:col-span-3 md:col-span-6 flex flex-col gap-5 mt-12">
         <Link
           href="/generalne"
           className="flex justify-between items-center w-full duration-150 rounded-md border p-3 hover:text-primary border-[#D9D9D9]"
