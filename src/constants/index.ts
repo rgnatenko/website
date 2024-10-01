@@ -17,7 +17,7 @@ export const ADDITIONAL_SERVICES_PRICES = [
     { name: ADDITIONAL_SERVICES[0], price: 350, hourly: false, meterByMeter: false, },
     { name: ADDITIONAL_SERVICES[1], price: 245, hourly: false, meterByMeter: false, },
     { name: ADDITIONAL_SERVICES[2], price: 160, hourly: false, meterByMeter: false, },
-    { name: ADDITIONAL_SERVICES[3], price: 50, hourly: false, meterByMeter: true, },
+    { name: ADDITIONAL_SERVICES[3], price: 200, hourly: false, meterByMeter: true, },
     { name: ADDITIONAL_SERVICES[4], price: 210, hourly: true, meterByMeter: false },
     { name: ADDITIONAL_SERVICES[5], price: 150, hourly: true, meterByMeter: false },
     { name: ADDITIONAL_SERVICES[6], price: 230, hourly: true, meterByMeter: false },

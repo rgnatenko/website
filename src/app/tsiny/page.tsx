@@ -13,7 +13,7 @@ export default function Tsiny() {
 
   return (
     <>
-      <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex flex-col gap-8 justify-center">
+      <div className="pt-[50px] px-6 sm:px-12 md:px-16 col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex flex-col gap-8 justify-center">
         <Selector
           title="Тип прибирання:"
           items={CLEANING_TYPES}
@@ -25,7 +25,7 @@ export default function Tsiny() {
         <PriceTable typeOfCleaning={typeOfCleaning} />
       </div>
 
-      <div className="col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 relative flex justify-center text-center text-[20px] sm:text-[30px] text-gray-900 mt-10 sm:mt-20 mb-5">
+      <div className="px-6 sm:px-12 md:px-16 col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 relative flex justify-center text-center text-[20px] sm:text-[30px] text-gray-900 mt-10 sm:mt-20 mb-5">
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-4">
             Розрахуй

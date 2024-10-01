@@ -10,10 +10,22 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import Selector from "@/components/ui/Selector";
 import { getCleaningPrice } from "@/lib/getPriceAndHoursForFlat";
+import { cn } from "@/lib/utils";
 
-export default function PriceCalculator() {
-  const [typeOfCleaning, setTypeOfCleaning] =
-    useState<TypeOfCleaning>("poverhneve");
+interface Props {
+  calculatorClassName?: string;
+  boxClassName?: string;
+  selectedCleaningType?: TypeOfCleaning;
+}
+
+export default function PriceCalculator({
+  calculatorClassName,
+  boxClassName,
+  selectedCleaningType,
+}: Props) {
+  const [typeOfCleaning, setTypeOfCleaning] = useState<TypeOfCleaning>(
+    selectedCleaningType ?? "poverhneve"
+  );
   const [roomAmount, setRoomAmount] = useState(1);
   const [additionalServices, setAdditionalServices] = useState<
     {
@@ -42,17 +54,23 @@ export default function PriceCalculator() {
 
   return (
     <>
-      <div className="col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-6 lg:col-start-2 2xl:col-start-3 2xl:col-span-5 p-6 lg:p-12 rounded-lg bg-white flex flex-col gap-8 text-gray-900">
+      <div
+        className={cn(
+          "ml-6 sm:ml-12 lgd:mx-0 col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-6 lg:col-start-2 2xl:col-start-3 2xl:col-span-5 p-6 lg:p-12 rounded-lg bg-white flex flex-col gap-8 text-gray-900",
+          calculatorClassName
+        )}
+      >
         <div className="w-full flex flex-col sm:flex-row md:flex-col lg:flex-row gap-5 justify-between items-center">
           <Selector
             title="Тип прибирання:"
             className="sm:flex-col items-center lg:items-start justify-between w-full"
             triggerClassName="w-full"
             items={CLEANING_TYPES}
-            defaultValue="poverhneve"
+            defaultValue={selectedCleaningType ?? "poverhneve"}
             onValueChange={(e: string) =>
               setTypeOfCleaning(e as TypeOfCleaning)
             }
+            disabled={Boolean(selectedCleaningType)}
           />
 
           <Selector
@@ -189,7 +207,10 @@ export default function PriceCalculator() {
       </div>
 
       <div
-        className="relative h-fit col-span-4 sm:col-start-1 sm:col-span-6 md:col-start-7 lg:col-start-8 lg:col-span-4 2xl:col-start-8 2xl:col-span-3 p-6 py-8 rounded-lg bg-white flex flex-col gap-6 text-gray-900 border border-primary"
+        className={cn(
+          "mr-6 sm:mr-12 lg:mx-0 relative h-fit col-span-4 sm:col-start-1 sm:col-span-6 md:col-start-7 lg:col-start-8 lg:col-span-4 2xl:col-start-8 2xl:col-span-3 p-6 py-8 rounded-lg bg-white flex flex-col gap-6 text-gray-900 border border-primary",
+          boxClassName
+        )}
         style={{ boxShadow: "8px 8px 0px #0038FF" }}
       >
         <div className="absolute -top-3 text-2xl">📌</div>

@@ -16,6 +16,7 @@ interface Props {
   title: string;
   items: { name: any; value: any }[];
   defaultValue?: any;
+  disabled?: boolean;
 }
 
 export default function Selector({
@@ -25,11 +26,16 @@ export default function Selector({
   items,
   triggerClassName,
   defaultValue,
+  disabled,
 }: Props) {
   return (
     <div className={cn("flex gap-4 items-center text-sm", className)}>
       {title}
-      <Select defaultValue={defaultValue} onValueChange={onValueChange}>
+      <Select
+        disabled={disabled}
+        defaultValue={defaultValue}
+        onValueChange={onValueChange}
+      >
         <SelectTrigger
           className={cn(
             "relative w-48 focus-visible:border-0 text-left",

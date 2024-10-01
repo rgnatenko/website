@@ -73,7 +73,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 bg-[#F1F7FF] px-8 py-8 rounded-lg text-gray-900">
+    <div className="sm:px-12 md:px-16 col-start-1 col-span-4 sm:col-span-6 md:col-span-12 bg-[#F1F7FF] px-8 py-8 rounded-lg text-gray-900">
       <div className="flex flex-col sm:flex-row items-center justify-between w-full text-[14px]">
         <h2 className="text-[30px] sm:text-[26px] md:text-[35px] lg:text-[40px] font-bold uppercase w-full">
           наші послуги

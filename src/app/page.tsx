@@ -12,7 +12,7 @@ import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
-    <>
+    <div className="px-6 sm:px-12 md:px-16 col-span-4 sm:col-span-6 md:col-span-12 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12">
       <div className="hidden lg:flex col-span-12 justify-between items-center gap-12">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col items-start">
@@ -35,16 +35,54 @@ export default function Home() {
           </div>
         </div>
 
-        <Image
-          className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px] lg:w-[400px] lg:h-[420px] xl:w-[580px] xl:h-[620px] 2xl:w-[680px] 2xl:h-[720px]"
-          src="/first-screen-photo.png"
-          width={622}
-          height={654}
-          alt=""
-        />
+        <div className="relative w-full flex items-center justify-center">
+          <Image
+            className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px] lg:w-[400px] lg:h-[420px] xl:w-[580px] xl:h-[620px] 2xl:w-[680px] 2xl:h-[720px]"
+            src="/first-screen-photo.png"
+            width={622}
+            height={654}
+            alt=""
+          />
+
+          <div className="absolute bottom-0 xl:bottom-[10%] h-40 z-10 w-full">
+            <div className="absolute -rotate-6">
+              <div className="px-8 py-2 sm:px-3 text-sm lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+                🇺🇦 Київ
+              </div>
+            </div>
+            <div className="absolute bottom-0 w-fit -rotate-6">
+              <div className="px-8 py-2 sm:px-3 text-sm lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+                🇺🇦 Дніпро
+              </div>
+            </div>
+            <div className="absolute right-0 top-[20%] -rotate-6">
+              <div className="px-8 py-2 sm:px-3 text-sm lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+                🇺🇦 Новомосковськ
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="col-span-4 flex items-center justify-center sm:col-span-6 md:col-span-12 xl:col-start-8 xl:col-span-6 lg:hidden">
+      <div className="relative col-span-4 flex flex-col items-center justify-center sm:col-span-6 md:col-span-12 xl:col-start-8 xl:col-span-6 lg:hidden">
+        <div className="absolute bottom-0 h-40 z-10 w-full md:w-[70%]">
+          <div className="absolute top-0 left-0 -rotate-6">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+              🇺🇦 Київ
+            </div>
+          </div>
+          <div className="absolute bottom-0 right-[40%] md:right-[10%] md:bottom-[40%] w-fit -rotate-6">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+              🇺🇦 Дніпро
+            </div>
+          </div>
+          <div className="absolute top-[40%] left-0 -rotate-6">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-gray-900 font-medium bg-white shadow-md">
+              🇺🇦 Новомосковськ
+            </div>
+          </div>
+        </div>
+
         <Image
           className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px]"
           src="/first-screen-photo.png"
@@ -84,7 +122,7 @@ export default function Home() {
             >
               ✅
             </div>
-            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-[#6AA8FF]">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-white font-medium bg-[#6AA8FF]">
               Швидкість
             </div>
           </div>
@@ -96,7 +134,7 @@ export default function Home() {
             >
               ✅
             </div>
-            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-primary">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-white font-medium bg-primary">
               Сервіс
             </div>
           </div>
@@ -108,7 +146,7 @@ export default function Home() {
             >
               ✅
             </div>
-            <div className="px-8 py-2 sm:px-3 sm:text-[14px] text-md lg:text-md lg:px-8 rounded-md text-white font-medium bg-[#FFD766]">
+            <div className="px-8 py-2 sm:px-3 text-sm sm:text-lg lg:px-8 rounded-md text-white font-medium bg-[#FFD766]">
               Якість
             </div>
           </div>
@@ -150,6 +188,6 @@ export default function Home() {
       <Reviews />
 
       <FAQ />
-    </>
+    </div>
   );
 }

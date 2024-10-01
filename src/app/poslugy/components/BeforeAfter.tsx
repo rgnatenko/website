@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function BeforeAfter() {
   return (
-    <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 items-center gap-5 auto-rows-min col-span-4 sm:col-span-6 md:col-span-12 flex-col text-gray-900 mt-8 sm:mt-16">
+    <div className="px-6 sm:px-12 md:px-16 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 items-center gap-5 auto-rows-min col-span-4 sm:col-span-6 md:col-span-12 flex-col text-gray-900 mt-8 sm:mt-16">
       <div className="col-span-4 sm:col-span-6 flex flex-col gap-4 text-gray-900">
         <h2 className="text-[26px] font-bold uppercase">Наші до/після</h2>
 

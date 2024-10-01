@@ -21,7 +21,7 @@ export default function ClientRootLayout({
       <Header />
       <main
         className={cn(
-          `relative px-6 sm:px-12 md:px-16 sm:py-8 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-x-clip`,
+          `relative grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-5 auto-rows-min overflow-x-clip`,
           {
             "bg-[#F4F6FC]": isTsinyPage,
             "bg-white": !isTsinyPage,

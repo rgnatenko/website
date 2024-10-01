@@ -73,7 +73,7 @@ export default function Poslugy() {
     <>
       <Services />
 
-      <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex flex-col min-[930px]:flex-row gap-6 xl:gap-40 items-center bg-[#FCF9F0] px-8 py-8 lg:py-12 xl:px-16 xl:py-16 rounded-lg mt-8 sm:mt-16">
+      <div className="sm:px-12 md:px-16 col-start-1 col-span-4 sm:col-span-6 md:col-span-12 flex flex-col min-[930px]:flex-row gap-6 xl:gap-40 items-center bg-[#FCF9F0] px-8 py-8 lg:py-12 xl:px-16 xl:py-16 rounded-lg mt-8 sm:mt-16">
         <h2 className="font-bold text-[24px] lg:text-[28px] xl:text-[36px] text-primary uppercase w-full">
           -15% на замовлення, зроблене на сайті
         </h2>
@@ -99,7 +99,7 @@ export default function Poslugy() {
 
       <BeforeAfter />
 
-      <div className="col-start-1 col-span-4 sm:col-span-6 md:col-span-12 -mt-28">
+      <div className="px-6 sm:px-12 md:px-16 col-start-1 col-span-4 sm:col-span-6 md:col-span-12 -mt-28">
           <Reviews />
       </div>
     </>
