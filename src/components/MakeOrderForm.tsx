@@ -115,7 +115,7 @@ export default function OrderForm({ className }: Props) {
       <DialogTrigger asChild>
         <Button className={cn("sm:w-fit", className)}>Замовити прибирання</Button>
       </DialogTrigger>
-      <DialogContent className="w-[350px] sm:max-w-[425px] h-96 overflow-auto">
+      <DialogContent className="w-[350px] sm:max-w-[425px] lg:w-[700px] h-fit overflow-auto">
         <DialogClose
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
           onClick={clearErrors}
@@ -157,7 +157,7 @@ export default function OrderForm({ className }: Props) {
               <Select
                 {...register("city")}
                 onValueChange={(e) => setValue("city", e)}
-                defaultValue="Дніпро"
+                // defaultValue="Дніпро"
                 value={watch("city")}
               >
                 <SelectTrigger className="focus-visible:border-0">
