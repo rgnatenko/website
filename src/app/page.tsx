@@ -92,7 +92,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="lg:hidden col-span-4 sm:col-span-6 md:col-span-12 xl:col-start-1 xl:col-span-6 flex flex-col items-center">
+      <div className="lg:hidden mt-10 col-span-4 sm:col-span-6 md:col-span-12 xl:col-start-1 xl:col-span-6 flex flex-col items-center">
         <div className="p-3 sm:p-6 md:p-3 w-fit bg-[#F1F7FF] drop-shadow-md rounded-sm font-bold text-gray-900 uppercase text-[30px] sm:text-[45px] md:text-[50px] lg:text-[60px] xl:p-5">
           У вашій оселі
         </div>
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:hidden flex flex-col items-center text-center gap-4 text-lg text-gray-900 col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 lg:px-40 xl:px-0 xl:col-start-1 xl:col-span-6">
+      <div className="lg:hidden mt-5 flex flex-col items-center text-center gap-4 text-lg text-gray-900 col-span-4 sm:col-start-1 sm:col-span-6 md:col-span-12 lg:px-40 xl:px-0 xl:col-start-1 xl:col-span-6">
         Замовляй прибирання оселі або офісу чи коммерційного приміщення. Тримай
         усе в чистоті та порядку.
         <OrderForm />
