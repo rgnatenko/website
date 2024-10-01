@@ -18,6 +18,7 @@ const options = ADDITIONAL_SERVICES.map((service) => ({
 
 interface Props {
   register: UseFormRegister<{
+    email: string;
     name: string;
     phone: string;
     city: string;
@@ -26,6 +27,7 @@ interface Props {
     additionalServices?: string[] | undefined;
   }>;
   setValue: UseFormSetValue<{
+    email: string;
     name: string;
     phone: string;
     city: string;

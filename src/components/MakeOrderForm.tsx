@@ -31,6 +31,7 @@ import { Textarea } from "./ui/textarea";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
+  email: z.string().email({ message: "Некоректна пошта" }),
   name: z.string().min(1, "Імʼя обов'язкове"),
   phone: z.string().min(10, "Введіть коректний номер телефону"),
   city: z.string({ message: "Виберіть місто" }),
@@ -62,6 +63,7 @@ export default function OrderForm({ className }: Props) {
   const [clearServices, setClearServices] = useState(false);
 
   const clearErrors = () => {
+    setError("email", { message: "" });
     setError("name", { message: "" });
     setError("phone", { message: "" });
     setError("city", { message: "" });
@@ -70,6 +72,7 @@ export default function OrderForm({ className }: Props) {
   };
 
   const clearForm = () => {
+    setValue("email", "");
     setValue("name", "");
     setValue("phone", "");
     setValue("city", "");
@@ -113,9 +116,11 @@ export default function OrderForm({ className }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className={cn("sm:w-fit", className)}>Замовити прибирання</Button>
+        <Button className={cn("sm:w-fit", className)}>
+          Замовити прибирання
+        </Button>
       </DialogTrigger>
-      <DialogContent className="w-[350px] sm:max-w-[425px] lg:w-[700px] h-fit overflow-auto">
+      <DialogContent className="w-[450px] sm:max-w-[425px] lg:w-[700px] rounded-xl h-fit overflow-auto">
         <DialogClose
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
           onClick={clearErrors}
@@ -151,6 +156,17 @@ export default function OrderForm({ className }: Props) {
               />
               {errors.phone?.message && (
                 <p className="text-red-500">{errors.phone.message}</p>
+              )}
+            </div>
+            <div>
+              <Input
+                id="email"
+                {...register("email")}
+                placeholder="Електронна пошта"
+                value={watch("email")}
+              />
+              {errors.email?.message && (
+                <p className="text-red-500">{errors.email.message}</p>
               )}
             </div>
             <div>

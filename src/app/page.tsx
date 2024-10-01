@@ -113,7 +113,7 @@ export default function Home() {
       </div>
 
       <div className="col-span-4 sm:col-start-1 sm:col-span-3 md:col-start-1 md:col-span-6 mt-28">
-        <div className="relative w-fit">
+        <div className="relative w-fit mx-auto sm:mx-0">
           <div className="w-[365px] h-[100px] sm:w-[200px] sm:h-[60px] md:w-[250px] md:h-[80px] lg:w-[365px] lg:h-[104px] rounded-[60%] rotate-12 border border-[#EDEDED]" />
           <div className="absolute -top-7 left-12 rotate-6">
             <div

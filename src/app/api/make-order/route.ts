@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const { name, phone, city, premisesType, cleaningType, additionalServices, comment } = await req.json();
+        const { name, email, phone, city, premisesType, cleaningType, additionalServices, comment } = await req.json();
 
         const emailMessage = {
-            from: process.env.NEXT_USER,
+            from: email,
             to: process.env.NEXT_USER,
             subject: `Заявка на прибирання від ${name}`,
             text: `
