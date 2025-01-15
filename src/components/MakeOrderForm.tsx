@@ -120,7 +120,7 @@ export default function OrderForm({ className }: Props) {
           Замовити прибирання
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[450px] sm:max-w-[425px] lg:w-[700px] rounded-xl h-fit overflow-auto">
+      <DialogContent className="w-[450px] sm:max-w-[425px] lg:w-[700px] rounded-xl h-[9`0%] overflow-auto">
         <DialogClose
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
           onClick={clearErrors}
