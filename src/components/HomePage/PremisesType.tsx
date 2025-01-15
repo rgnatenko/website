@@ -21,6 +21,7 @@ export default function PremisesType() {
       <div className="relative col-start-1 col-span-4 sm:col-span-6 md:col-start-3 md:col-span-8 flex flex-col gap-5">
         {typeOfRoom === "zhitlovi_prymishenya" && (
           <Image
+            priority
             src="/house.png"
             alt=""
             width={856}
@@ -32,6 +33,7 @@ export default function PremisesType() {
         {typeOfRoom === "ofisy" && (
           <Image
             src="/ofis.png"
+            priority
             alt=""
             width={856}
             height={635}
@@ -41,6 +43,7 @@ export default function PremisesType() {
 
         {typeOfRoom === "gotelni_nomera" && (
           <Image
+            priority
             src="/gotel.png"
             alt=""
             width={856}
@@ -51,6 +54,7 @@ export default function PremisesType() {
 
         {typeOfRoom === "commerciyni_prymishenya" && (
           <Image
+            priority
             src="/magazyn.png"
             alt=""
             width={856}

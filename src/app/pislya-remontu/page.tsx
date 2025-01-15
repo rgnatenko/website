@@ -30,6 +30,7 @@ export default function CleaningAfterRenovation() {
               <OrderForm />
             </div>
             <Image
+              priority
               src="/lader.webp"
               width={303}
               height={571}

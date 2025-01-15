@@ -37,6 +37,7 @@ export default function Home() {
 
         <div className="relative w-full flex items-center justify-center">
           <Image
+            priority
             className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:h-[620px] lg:w-[400px] lg:h-[420px] xl:w-[580px] xl:h-[620px] 2xl:w-[680px] 2xl:h-[720px]"
             src="/first-screen-photo.png"
             width={622}

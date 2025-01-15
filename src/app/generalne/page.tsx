@@ -29,6 +29,7 @@ export default function GeneralCleaning() {
 
         <div className="z-0 absolute bottom-0 right-0">
           <Image
+            priority
             className="w-[342px] h-[360px] min-[530px]:w-[542px] min-[530px]:h-[520px] min-[560px]:h-[560px] sm:w-[580px] sm:h-[600px] md:w-[600px] md:h-[620px] lg:w-[480px] lg:h-[500px] 2xl:w-[760px] 2xl:h-[780px]"
             src="/generalne-screen.webp"
             width={622}
@@ -36,9 +37,7 @@ export default function GeneralCleaning() {
             alt=""
           />
         </div>
-        <div className="z-10 absolute bottom-0 right-0 h-[100px] w-[300px] flex flex-col">
-          
-        </div>
+        <div className="z-10 absolute bottom-0 right-0 h-[100px] w-[300px] flex flex-col"></div>
       </div>
 
       <ScopeOfWork />
