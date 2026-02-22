@@ -1,16 +1,19 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Label } from "../ui/label";
 
+const imageMap = {
+  zhitlovi_prymishenya: "/house.webp",
+  ofisy: "/ofis.webp",
+  gotelni_nomera: "/gotel.webp",
+  commerciyni_prymishenya: "/magazyn.webp",
+};
+
 export default function PremisesType() {
   const [typeOfRoom, setTypeOfRoom] = useState("zhitlovi_prymishenya");
-
-  const handleTypeOfRoomChange = (e: any) => {
-    console.log(e);
-    setTypeOfRoom(e);
-  };
 
   return (
     <>
@@ -19,69 +22,45 @@ export default function PremisesType() {
       </div>
 
       <div className="relative col-start-1 col-span-4 sm:col-span-6 md:col-start-3 md:col-span-8 flex flex-col gap-5">
-        {typeOfRoom === "zhitlovi_prymishenya" && (
-          <Image
-            priority
-            src="/house.png"
-            alt=""
-            width={856}
-            height={635}
-            className="w-full h-full z-10"
-          />
-        )}
+        <div className="relative w-full aspect-[856/635]">
+          {Object.entries(imageMap).map(([key, src]) => (
+            <Image
+              key={key}
+              src={src}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority={key === "zhitlovi_prymishenya"}
+              className={`object-contain transition-opacity duration-500 ease-in-out ${
+                typeOfRoom === key
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            />
+          ))}
+        </div>
 
-        {typeOfRoom === "ofisy" && (
-          <Image
-            src="/ofis.png"
-            priority
-            alt=""
-            width={856}
-            height={635}
-            className="w-full h-full z-10"
-          />
-        )}
-
-        {typeOfRoom === "gotelni_nomera" && (
-          <Image
-            priority
-            src="/gotel.png"
-            alt=""
-            width={856}
-            height={635}
-            className="w-full h-full z-10"
-          />
-        )}
-
-        {typeOfRoom === "commerciyni_prymishenya" && (
-          <Image
-            priority
-            src="/magazyn.png"
-            alt=""
-            width={856}
-            height={635}
-            className="w-full h-full z-10"
-          />
-        )}
-
-        <div className="absolute  -top-40 right-4 md:-top-[35%] md:-right-[30%] xl:-right-[20%] xl:-top-[10%]">
+        {/* Yellow badge */}
+        <div className="absolute -top-40 right-4 md:-top-[35%] md:-right-[30%] xl:-right-[20%] xl:-top-[10%]">
           <div className="relative z-10 w-44 px-4 py-1 text-sm rounded-md text-white font-medium bg-[#FFD766] rotate-6">
             Будь-якої степені забрудненості ✅
           </div>
-          <div className="absolute top-[50%] -left-[50%] w-[450px] h-[100px] border border-primary rounded-[60%]"></div>
+          <div className="absolute top-[50%] -left-[50%] w-[450px] h-[100px] border border-primary rounded-[60%]" />
         </div>
 
+        {/* Blue badge */}
         <div className="absolute -bottom-24 md:-bottom-[20%] md:-left-[20%] lg:-bottom-[10%] xl:-left-[15%]">
           <div className="relative z-10 rotate-6 px-4 py-1 text-sm rounded-md text-white font-medium bg-[#6AA8FF]">
             Будь-яка локація ✅
           </div>
-
-          <div className="absolute -top-[150%] -left-[200%] w-[450px] h-[120px] border border-primary rounded-[60%]"></div>
+          <div className="absolute -top-[150%] -left-[200%] w-[450px] h-[120px] border border-primary rounded-[60%]" />
         </div>
 
+        {/* Radio Buttons */}
         <RadioGroup
-          defaultValue="zhitlovi_prymishenya"
+          value={typeOfRoom}
+          onValueChange={setTypeOfRoom}
           className="flex w-full justify-between flex-col sm:flex-row space-y-2 sm:space-y-0"
-          onValueChange={(e) => handleTypeOfRoomChange(e)}
         >
           <div className="flex flex-col gap-4">
             <div className="flex items-center space-x-2">
@@ -90,10 +69,11 @@ export default function PremisesType() {
                 Житлові приміщення
               </Label>
             </div>
+
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="ofisy" id="r2" />
               <Label htmlFor="r2" className="uppercase font-semibold w-max">
-                офісні приміщення
+                Офісні приміщення
               </Label>
             </div>
           </div>
@@ -102,13 +82,14 @@ export default function PremisesType() {
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="gotelni_nomera" id="r3" />
               <Label htmlFor="r3" className="uppercase font-semibold w-max">
-                готельні номери
+                Готельні номери
               </Label>
             </div>
+
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="commerciyni_prymishenya" id="r3" />
-              <Label htmlFor="r3" className="uppercase font-semibold w-max">
-                комерційні приміщення
+              <RadioGroupItem value="commerciyni_prymishenya" id="r4" />
+              <Label htmlFor="r4" className="uppercase font-semibold w-max">
+                Комерційні приміщення
               </Label>
             </div>
           </div>
